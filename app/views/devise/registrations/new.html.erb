@@ -4,12 +4,27 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "senha" %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_type_id, "Tipo" %><br />    
+    <%= select_tag(:user_type_id, options_for_select([["Estudante", 1], ["Servidor", 2], ["Professor", 3]])) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :document_number, "Número de matricula" %><br />
+    <%= f.text_field :document_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Senha" %>
     <% if @minimum_password_length %>
     <em>(no mínimo <%= @minimum_password_length %> caracteres)</em>
     <% end %><br />
@@ -19,6 +34,16 @@
   <div class="field">
     <%= f.label :password_confirmation, "Confirmar senha" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone, "Telefone" %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_type_id, "Necessidade especial" %><br />    
+    <%= select_tag(:special_need_id, options_for_select([["Deficiência auditiva", 1], ["Deficiência visual", 2], ["Deficiência motora", 3]])) %>
   </div>
 
   <div class="actions">
