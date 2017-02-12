@@ -39,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :production do
+group :production, :test do
   gem 'pg'
 end
 
@@ -59,7 +59,6 @@ group :development do
 end
 
 group :test do 
-  gem 'pg'
   gem 'rake'
 end
 
