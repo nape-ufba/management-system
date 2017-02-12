@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :user_type_id, "Tipo" %><br />    
-    <%= select_tag(:user_type_id, options_for_select([["Estudante", 1], ["Servidor", 2], ["Professor", 3]])) %>
+    <%= f.select :user_type_id, options_for_select([["Estudante", 1], ["Servidor", 2], ["Professor", 3]]) %>
   </div>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= f.label :user_type_id, "Necessidade especial" %><br />    
-    <%= select_tag(:special_need_id, options_for_select([["Deficiência auditiva", 1], ["Deficiência visual", 2], ["Deficiência motora", 3]])) %>
+    <%= f.select :special_need_id, options_for_select([["Deficiência auditiva", 1], ["Deficiência visual", 2], ["Deficiência motora", 3]]) %>
   </div>
 
   <div class="actions">
