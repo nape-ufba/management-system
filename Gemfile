@@ -46,11 +46,10 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  # Use mysql as the database for Active Record
-  gem 'mysql2'
 end
 
 group :development do
+  gem 'mysql2'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
@@ -60,6 +59,7 @@ group :development do
 end
 
 group :test do 
+  gem 'pg'
   gem 'rake'
 end
 
