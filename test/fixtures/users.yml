@@ -11,8 +11,8 @@ one:
   document_number: 1
 
 two:
-  name: MyString
-  email: MyString
+  name: MyString2
+  email: MyString2
   course_id: 1
   user_type_id: 1
   role_id: 1
