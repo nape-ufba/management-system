@@ -8,7 +8,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'devise' 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -16,6 +15,10 @@ gem 'rails', '~> 5.0.1'
 #gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
