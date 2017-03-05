@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'auth', only: [:login, :register]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -10,6 +11,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+  end
+
+  def login
+  end
+
+  def register
   end
 
   # GET /users/new
