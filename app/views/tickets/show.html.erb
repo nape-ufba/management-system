@@ -10,20 +10,21 @@
   <%= @ticket.message %>
 </p>
 
+<h4>Mensagens:</h4>
+
 <% @ticket.ticket_messages.each do |ticket_message| %>
-  <p><%= ticket_message.message %></p>
+  <p><%= ticket_message.message %><hr/></p>
 <% end %>
 
 <h2>Adicionar mensagem:</h2>
 <%= form_for([@ticket, @ticket.ticket_messages.build]) do |f| %>
   <div class="field">
-    <%= f.label :message %><br />
+    <%= f.label :message, 'Mensagem' %><br />
     <%= f.text_area :message %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar' %>
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to 'Voltar', tickets_path %>
