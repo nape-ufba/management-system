@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ticket.title %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @ticket.message %>
+</p>
+
+<% @ticket.ticket_messages.each do |ticket_message| %>
+  <p><%= ticket_message.message %></p>
+<% end %>
+
+<h2>Adicionar mensagem:</h2>
+<%= form_for([@ticket, @ticket.ticket_messages.build]) do |f| %>
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

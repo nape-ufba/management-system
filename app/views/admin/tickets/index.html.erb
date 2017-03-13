@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="sub-header">Tickets</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.id %></td>
+          <td><%= ticket.title %></td>
+          <td><%= link_to 'Ver', admin_ticket_path(ticket) %></td>
+          <td><%= link_to 'Editar', edit_admin_ticket_path(ticket) %></td>
+          <td><%= link_to 'Apagar', admin_tickets_path, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Abrir novo ticket', new_ticket_path %>
