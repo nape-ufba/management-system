@@ -1,3 +1,48 @@
-// Place all the styles related to the admin/ticket_messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.ticket-full {
+    h2 {
+        margin: 0;
+    }
+
+    .ticket-full-message {
+        margin-top: 10px;
+    }
+
+    .ticket-full-form {
+        margin-top: 10px;
+    }
+
+    .ticket-full-conversation {     
+        margin-top: 10px;
+
+        h3 {
+            margin: 0;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .ticker-full-message {
+            margin-top: 8px;
+            padding: 5px;
+            border: 1px solid #c1c1c1;
+            border-width: 0 0 1px 1px;
+
+            .ticker-full-message-head {
+                .ticker-full-message-head-user {
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .ticker-full-message-head-date {
+                    text-transform: uppercase;
+                    color: #969696;
+                    font-size: 0.8em;
+                }
+            }
+
+            .ticker-full-message-body {
+                margin-top: 10px;
+            }
+        }
+    }
+}

@@ -1,31 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @ticket.title %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @ticket.message %>
-</p>
-
-<h4>Mensagens:</h4>
-
-<% @ticket.ticket_messages.each do |ticket_message| %>
-  <p><%= ticket_message.message %><hr/></p>
-<% end %>
-
-<h2>Adicionar mensagem:</h2>
-<%= form_for([:admin, @ticket, @ticket.ticket_messages.build]) do |f| %>
-  <div class="field">
-    <%= f.label :message, 'Mensagem' %><br />
-    <%= f.text_area :message %>
+<div class="ticket-full">
+  <h2>Ticket: <%= @ticket.title %></h2>
+  <div class="ticket-full-details">
+    <b>Status</b>: <span class="label label-primary">Aberto</span>
+    <br/>
+    <b>Criado em:</b/> 15/02/17 às 17:58
   </div>
-  <div class="actions">
-    <%= f.submit 'Enviar' %>
+
+  <div class="ticket-full-message">
+    <b>Mensagem:</b>
+    <br/>
+    <%= @ticket.message %>
   </div>
-<% end %>
 
+  <div class="ticket-full-conversation">
+    <h3>Conversa:</h3>
 
-<%= link_to 'Voltar', admin_tickets_path %>
+    <% @ticket.ticket_messages.each do |ticket_message| %>
+      <div class="ticker-full-message">
+        <div class="ticker-full-message-head">
+          <div class="ticker-full-message-head-user"><span>Cargo</span>: Nome do usuário</div>
+          <div class="ticker-full-message-head-date">Enviado em: 15/02/17 às 17:58</div>
+        </div>
+        <div class="ticker-full-message-body">
+          <%= ticket_message.message %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="ticket-full-form">
+      <h3>Adicionar mensagem:</h3>
+      <%= form_for([:admin, @ticket, @ticket.ticket_messages.build]) do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :message, 'Mensagem' %><br />
+          <%= f.text_area :message, :class => 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Enviar mensagem', :class => 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
