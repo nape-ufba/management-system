@@ -3,7 +3,7 @@
   <div class="ticket-full-details">
     <b>Status</b>: <span class="label label-primary">Aberto</span>
     <br/>
-    <b>Criado em:</b/> 15/02/17 às 17:58
+    <b>Criado em:</b/> <%= @ticket.created_at.strftime("%d/%m/%Y %H:%M") %>
   </div>
 
   <div class="ticket-full-message">
@@ -18,8 +18,8 @@
     <% @ticket.ticket_messages.each do |ticket_message| %>
       <div class="ticker-full-message">
         <div class="ticker-full-message-head">
-          <div class="ticker-full-message-head-user"><span>Cargo</span>: <%= ticket_message.user.name %></div>
-          <div class="ticker-full-message-head-date">Enviado em: <%= ticket_message.created_at %></div>
+          <div class="ticker-full-message-head-user"><span><%= ticket_message.user.role.name %></span>: <%= ticket_message.user.name %></div>
+          <div class="ticker-full-message-head-date">Enviado em: <%= ticket_message.created_at.strftime("%d/%m/%Y %H:%M") %></div>
         </div>
         <div class="ticker-full-message-body">
           <%= ticket_message.message %>

@@ -7,3 +7,43 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+Role.create([
+    {
+        name: "Usuário",
+        slug: "user"
+    },
+    {
+        name: "Administrador",
+        slug: "adm"
+    }    
+]);
+
+UserType.create({
+    name: "Aluno",
+    slug: "student"
+})
+
+admin = UserType.create({
+    name: "Professor",
+    slug: "professor"
+})
+
+SpecialNeed.create([
+    {
+        name: "Baixa audição",
+    },
+    {
+        name: "Surdez",
+    },
+    {
+        name: "Sem necessidade especial"
+    }    
+]);
+
+User.create({
+        name: "Administrador",
+        email: "admin@nape.com",
+        user_type_id: 1,
+        role_id: 2,
+        encrypted_password: BCrypt::Password.create("admin").to_s
+});

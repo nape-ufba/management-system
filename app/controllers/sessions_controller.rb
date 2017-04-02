@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    params = user_params
     user = User.find { |u| u.email == user_params[:email] }
     if user && test_password(user_params[:password], user.encrypted_password)
       session.clear

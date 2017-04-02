@@ -3,6 +3,8 @@ class AdminController < ApplicationController
   before_action :require_admin
 
   def require_admin    
-    #   redirect_to root_path
+    if current_user.role.slug != "adm"
+      redirect_to "/"
+    end
   end
 end

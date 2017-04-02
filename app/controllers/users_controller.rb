@@ -8,11 +8,13 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user_types = UserType.all
+    @special_needs = SpecialNeed.all
   end
 
   def create
-    user_params[:encrypted_password] = hash_password(user_params[:password])
     @user = User.new(user_params.except("password"))    
+    @user.encrypted_password = hash_password(user_params[:password])
     @user.role_id = 1    
 
     if @user.save
