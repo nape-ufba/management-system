@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       session.clear
       session[:user_id] = user.id
       if user.role_id == 2
-        redirect_to '/admin/'
+        redirect_to '/admin/tickets'
       else
         redirect_to '/'
       end
