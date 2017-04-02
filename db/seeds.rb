@@ -42,8 +42,8 @@ SpecialNeed.create([
 
 User.create({
         name: "Administrador",
-        email: "admin@nape.com",
+        email: "adm@nape.com",
         user_type_id: 1,
         role_id: 2,
-        encrypted_password: BCrypt::Password.create("admin").to_s
+        encrypted_password: BCrypt::Password.create("adm").to_s
 });

@@ -5,6 +5,10 @@
 
 Trata-se de um sistema de gerenciamento de demandas de alunos com necessidades educacionais especiais através de tickets. A aplicação é feita em Rails e fornece tanto uma interface para os usuários quanto para os funcionários do NAPE.
 
+## Demo
+
+Para ter permissão de administrador na demonstração online use o usuário `adm@nape.com` e senha `adm`!
+
 ## Como executar
 
 ### 1. Criando arquivo .env

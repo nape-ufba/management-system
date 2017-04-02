@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     if user && test_password(user_params[:password], user.encrypted_password)
       session.clear
       session[:user_id] = user.id
-      if user.role_id == 'admin'
+      if user.role_id == 2
         redirect_to '/admin/'
       else
         redirect_to '/'
