@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   namespace :admin do
     resources :users
     resources :tickets do
@@ -6,10 +8,14 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/entrar', to: 'users#login'
-  get '/registrar', to: 'users#register'
+  get '/entrar', to: 'sessions#new'
+  get '/registrar', to: 'users#new'
+  get '/logout', to: 'sessions#destroy'
   
   get '/', to: redirect('/tickets')
+
+  resources :sessions, :only => [:new, :create]
+  resources :users, :only => [:new, :create]
 
   root 'home#index'
 

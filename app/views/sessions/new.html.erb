@@ -1,17 +1,20 @@
-<%= array %>
-
 <div class="container">
-    <form class="form-signin">
+    <%= params.inspect %>
+    <%= form_tag sessions_path do %>
         <h2 class="form-signin-heading">Login</h2>
+
+        <% if @error %>
+            <div><%= @error %></div>
+        <% end %>
 
         <div class="form-group">
             <label for="inputEmail" class="sr-only">Endereço de email</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de email" required autofocus>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Endereço de email" required autofocus>
         </div>
 
         <div class="form-group">
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
@@ -19,5 +22,5 @@
         <div class="singup-invitation">
             Ainda não tem conta? <a href="/registrar">Registre-se</a>!
         </div>
-    </form>
+    <% end %>
 </div>
