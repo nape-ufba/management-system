@@ -1,14 +1,10 @@
 class Admin::TicketsController < AdminController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
-  # GET /tickets
-  # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all.includes(:user)
   end
 
-  # GET /tickets/1
-  # GET /tickets/1.json
   def show
   end
 

@@ -18,8 +18,8 @@
     <% @ticket.ticket_messages.each do |ticket_message| %>
       <div class="ticker-full-message">
         <div class="ticker-full-message-head">
-          <div class="ticker-full-message-head-user"><span>Cargo</span>: Nome do usuário</div>
-          <div class="ticker-full-message-head-date">Enviado em: 15/02/17 às 17:58</div>
+          <div class="ticker-full-message-head-user"><span>Cargo</span>: <%= ticket_message.user.name %></div>
+          <div class="ticker-full-message-head-date">Enviado em: <%= ticket_message.created_at %></div>
         </div>
         <div class="ticker-full-message-body">
           <%= ticket_message.message %>
